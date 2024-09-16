@@ -51,8 +51,11 @@ if __name__ == "__main__":
         "Can you tell me about what did the bank do to the plantiff")
     assert result_text is not None, "Result text is empty"
     assert all_scores is not None, "All scores is empty"
+    print('--------------------------------')
+
+    result_text = model.ollama_Generate_Answer(
+        "Can you tell me about what did the bank do to the plantiff")
     print(result_text)
-    print(all_scores)
     print('--------------------------------')
 
     print("ALL CASES PASSED")

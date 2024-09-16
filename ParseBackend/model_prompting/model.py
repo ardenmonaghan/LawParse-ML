@@ -36,3 +36,7 @@ class LlamaModel:
 
     def ollama_Generate_Answer(self, query_text: str):
         model = Ollama(model="llama3")
+
+        context, _scores = self.query_RAG(query_text)
+        prompt = PROMPT_TEMPLATE.format(context=context, question=query_text)
+        return model.invoke(prompt)
