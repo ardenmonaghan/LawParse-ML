@@ -32,3 +32,13 @@ Unstructured Data -> Model -> Vector Embedding [0.1,0.2,0.3]
 3. similarity search for text, images, audio or video data -> 
 maybe also find other similar elements in the document and clump them tohgether with pages
 4. reccomendation engine 
+
+
+### Version Control
+
+Continous diff
+Metric -> dataset. ideal response
+
+
+
+

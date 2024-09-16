@@ -54,7 +54,7 @@ if __name__ == "__main__":
     print('--------------------------------')
 
     result_text = model.ollama_Generate_Answer(
-        "Can you tell me about what did the bank do to the plantiff")
+        "Can you tell me when this incident occured ")
     print(result_text)
     print('--------------------------------')
 
