@@ -40,5 +40,11 @@ Continous diff
 Metric -> dataset. ideal response
 
 
+### Things Needed to Be Done
+
+- Version Control possibly without saving the databases, just having the chunks be inputted into the model
+- If someone adds a changed document to the database, the version control should be able to detect the changes and output the delta
+
+
 
 
