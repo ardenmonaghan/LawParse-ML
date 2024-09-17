@@ -16,7 +16,7 @@ This software offers intuitive, description-based lookups, ensuring streamlined 
 - Ollama
 - Langchain
 - Chroma Databases (Using SqlLite)
-- PyQt
+- PyQt Gui
 
 ## Getting Started
 
