@@ -6,10 +6,11 @@ from embedding_functions.embedding_function import get_embedding_function
 
 
 class VectorDatabase:
-    def __init__(self):
-        self.CHROMA_PATH = "chroma_db"
-    # for each chunk create its embedding and store it in a database'
+    def __init__(self, define_path: str):
+        # self.CHROMA_PATH = "chroma_db"
+        self.CHROMA_PATH = "chroma_databases/" + define_path
 
+     # for each chunk create its embedding and store it in a database'
     def create_vector_database(self, chunks_with_ids: list[Document]):
         '''for databases that require a database to be updated over time'''
 

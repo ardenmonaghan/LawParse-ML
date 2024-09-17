@@ -1,8 +1,10 @@
 from parser.pdf_parser import PDFParser
 from database_scripts.vector_database import VectorDatabase
 from model_prompting.model import LlamaModel
+from model_prompting.version_control_model import VersionControlModel
 
-if __name__ == "__main__":
+
+def test_parsing():
     parser = PDFParser()
     pages = parser.load_pdf("pdfs/ExampleClaim.pdf")
 
@@ -40,7 +42,7 @@ if __name__ == "__main__":
     print('--------------------------------')
 
     # Vector Database creation
-    vector_db = VectorDatabase()
+    vector_db = VectorDatabase("chroma_db")
     vector_db.create_vector_database(chunks)
     print("Vector Database created successfully")
     print('--------------------------------')
@@ -59,3 +61,45 @@ if __name__ == "__main__":
     print('--------------------------------')
 
     print("ALL CASES PASSED")
+
+
+def test_version_control():
+    parser = PDFParser()
+
+    pages_one = parser.load_pdf("pdf_version_control/doc1.pdf")
+    pages_two = parser.load_pdf("pdf_version_control/doc2.pdf")
+
+    assert len(pages_one) > 0, "Pages is empty"
+    assert len(pages_two) > 0, "Pages is empty"
+    print("Pages loaded successfully")
+    print('--------------------------------')
+    print(pages_one)
+
+    chunks_one = parser.chunk_id_creation(pages_one)
+    chunks_two = parser.chunk_id_creation(pages_two)
+
+    assert len(chunks_one) > 0, "Chunk ided failed"
+    assert len(chunks_two) > 0, "Chunk ided failed"
+    print("Chunks ided successfully")
+    print('--------------------------------')
+
+    vector_db = VectorDatabase("database_doc1")
+    vector_db.create_vector_database(chunks_one)
+
+    vector_db = VectorDatabase("database_doc2")
+    vector_db.create_vector_database(chunks_two)
+
+    print("Vector Database created successfully")
+    print('--------------------------------')
+
+    version_control_model = VersionControlModel()
+    response = version_control_model.prompt_version_control(
+        chunks_one, chunks_two)
+
+    print("--------------------")
+    print(response)
+
+
+if __name__ == "__main__":
+    # test_parsing()
+    test_version_control()
