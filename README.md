@@ -22,5 +22,7 @@ This software offers intuitive, description-based lookups, ensuring streamlined 
 
 Prereqruistes: Ensure Python is installed. (Preferably Python 3.10)  
 
+- Currently In Development.
+
 
 
