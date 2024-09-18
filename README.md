@@ -1,6 +1,6 @@
-# LocalParse-ML | Local File Prompting with Privacy.
+# LocalParse | Local File Prompting with Privacy.
 
-## Welcome to LocalParse-ML
+## Welcome to LocalParse
 LocalParse-ML is a GUI software application that is designed for easy access to securely prompting information regarding files towards an LLM model without having to run risk of leaking data to external sources. This software leverages Locally Hosted Llama Models with tools
 and Retrieval Augemented Generation methods to efficiently handle text matching and querying, allowing users to access relevant document chunks and create accurate prompts. Allowing for description based look up and accurate prompting. 
 
