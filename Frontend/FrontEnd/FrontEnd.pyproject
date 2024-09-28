@@ -1,0 +1,8 @@
+{
+    "files": [
+        "mainwindow.py",
+        "form.ui",
+        "insert.ui",
+        "chat.ui"
+    ]
+}
